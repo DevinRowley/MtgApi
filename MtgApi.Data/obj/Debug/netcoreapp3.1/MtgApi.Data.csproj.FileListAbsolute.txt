@@ -1,0 +1,12 @@
+C:\src\PersonalProject\MtgApi\MtgApi.Data\bin\Debug\netcoreapp3.1\MtgApi.Data.deps.json
+C:\src\PersonalProject\MtgApi\MtgApi.Data\bin\Debug\netcoreapp3.1\MtgApi.Data.runtimeconfig.json
+C:\src\PersonalProject\MtgApi\MtgApi.Data\bin\Debug\netcoreapp3.1\MtgApi.Data.runtimeconfig.dev.json
+C:\src\PersonalProject\MtgApi\MtgApi.Data\bin\Debug\netcoreapp3.1\MtgApi.Data.dll
+C:\src\PersonalProject\MtgApi\MtgApi.Data\bin\Debug\netcoreapp3.1\MtgApi.Data.pdb
+C:\src\PersonalProject\MtgApi\MtgApi.Data\obj\Debug\netcoreapp3.1\MtgApi.Data.csproj.CoreCompileInputs.cache
+C:\src\PersonalProject\MtgApi\MtgApi.Data\obj\Debug\netcoreapp3.1\MtgApi.Data.AssemblyInfoInputs.cache
+C:\src\PersonalProject\MtgApi\MtgApi.Data\obj\Debug\netcoreapp3.1\MtgApi.Data.AssemblyInfo.cs
+C:\src\PersonalProject\MtgApi\MtgApi.Data\obj\Debug\netcoreapp3.1\MtgApi.Data.dll
+C:\src\PersonalProject\MtgApi\MtgApi.Data\obj\Debug\netcoreapp3.1\MtgApi.Data.pdb
+C:\src\PersonalProject\MtgApi\MtgApi.Data\obj\Debug\netcoreapp3.1\MtgApi.Data.genruntimeconfig.cache
+C:\src\PersonalProject\MtgApi\MtgApi.Data\obj\Debug\netcoreapp3.1\MtgApi.Data.csprojAssemblyReference.cache

@@ -1,0 +1,6 @@
+#ignore sqlite db file. The db is too large for github
+AllPrintings.sqlite
+
+#ignore all sqlite files
+*.sqlite
+*.sqlite.*

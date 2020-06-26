@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\MtgApi",
+    "\\MtgApi\\bin\\Debug\\netcoreapp3.1\\runtimes",
+    "\\MtgApi\\bin\\Debug\\netcoreapp3.1\\runtimes\\linux-arm",
+    "\\MtgApi\\bin\\Debug\\netcoreapp3.1\\runtimes\\linux-arm64",
+    "\\MtgApi\\bin\\Debug\\netcoreapp3.1\\runtimes\\linux-x64",
+    "\\MtgApi\\bin\\Debug\\netcoreapp3.1\\runtimes\\linux-x64\\native"
+  ],
+  "SelectedNode": "\\MtgApi\\bin",
+  "PreviewInSolutionExplorer": false
+}
