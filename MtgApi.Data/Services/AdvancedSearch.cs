@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace MtgApi.Data.Services
 
     //todo add checking to make sure the url is correct and we have error checking
     //todo add in parsing for the OR operator
-    private string ParseQuery(string query)
+    private static string ParseQuery(string query)
     {
       var operandsSplitOnAnd = query.Split("&");
 
@@ -36,56 +37,85 @@ namespace MtgApi.Data.Services
       {
         var operand = operandsSplitOnAnd[i];
 
-
         if (operand.StartsWith("("))
         {
+          operand = operand.Replace("(", "");
+          operand = operand.Replace(")", "");
 
+          var splitOnOr = operand.Split("<or>");
+
+          for (var j = 0; j < splitOnOr.Length; j++)
+          {
+            var splitOnInnerEqual = splitOnOr[j].Split("=");
+
+            if (splitOnInnerEqual.FirstOrDefault() == "rarity")
+              splitOnOr[j] = $"cards.rarity = \'{splitOnInnerEqual.Last()}\'";
+            else
+              splitOnOr[j] = "";
+          }
+
+          var orString = new StringBuilder("(");
+
+          for (var k = 0; k < splitOnOr.Length; k++)
+          {
+            orString.Append(splitOnOr[k]);
+
+            if (k != splitOnOr.Length - 1)
+            {
+              orString.Append(" Or ");
+            }
+
+          }
+          orString.Append(")");
+
+          operandsSplitOnAnd[i] = orString.ToString();
         }
-
-
-
-        var splitOnEqual = operand.Split("=");
-
-        switch (splitOnEqual.FirstOrDefault())
+        else
         {
-          case "name":
-            operandsSplitOnAnd[i] = $"cards.name = \'{splitOnEqual.Last()}\'";
-            break;
-          case "manacost":
-            operandsSplitOnAnd[i] = $"cards.manacost = \'{splitOnEqual.Last()}\'";
-            break;
-          case "colors":
-            operandsSplitOnAnd[i] = $"cards.colors = \'{splitOnEqual.Last()}\'";
-            break;
-          case "rarity":
-            operandsSplitOnAnd[i] = $"cards.rarity = \'{splitOnEqual.Last()}\'";
-            break;
-          case "power":
-            operandsSplitOnAnd[i] = $"cards.power = \'{splitOnEqual.Last()}\'";
-            break;
-          case "toughness":
-            operandsSplitOnAnd[i] = $"cards.toughness = \'{splitOnEqual.Last()}\'";
-            break;
-          case "cmc":
-            operandsSplitOnAnd[i] = $"cards.convertedmanacost = \'{splitOnEqual.Last()}.0\'";
-            break;
-          case "text":
-            operandsSplitOnAnd[i] = $"cards.text = \'{splitOnEqual.Last()}\'";
-            break;
-          case "flavortext":
-            operandsSplitOnAnd[i] = $"cards.flavortext = \'{splitOnEqual.Last()}\'";
-            break;
-          case "supertypes":
-            operandsSplitOnAnd[i] = $"cards.supertypes = \'{splitOnEqual.Last()}\'";
-            break;
-          case "types":
-            operandsSplitOnAnd[i] = $"cards.types = \'{splitOnEqual.Last()}\'";
-            break;
-          case "subtypes":
-            operandsSplitOnAnd[i] = $"cards.subtypes = \'{splitOnEqual.Last()}\'";
-            break;
-          default:
-            break;
+          var splitOnEqual = operand.Split("=");
+
+          switch (splitOnEqual.FirstOrDefault())
+          {
+            case "name":
+              operandsSplitOnAnd[i] = $"cards.name = \'{splitOnEqual.Last()}\'";
+              break;
+            case "manacost":
+              operandsSplitOnAnd[i] = $"cards.manacost = \'{splitOnEqual.Last()}\'";
+              break;
+            case "colors":
+              operandsSplitOnAnd[i] = $"cards.colors = \'{splitOnEqual.Last()}\'";
+              break;
+            case "rarity":
+              operandsSplitOnAnd[i] = $"cards.rarity = \'{splitOnEqual.Last()}\'";
+              break;
+            case "power":
+              operandsSplitOnAnd[i] = $"cards.power = \'{splitOnEqual.Last()}\'";
+              break;
+            case "toughness":
+              operandsSplitOnAnd[i] = $"cards.toughness = \'{splitOnEqual.Last()}\'";
+              break;
+            case "cmc":
+              operandsSplitOnAnd[i] = $"cards.convertedmanacost = \'{splitOnEqual.Last()}.0\'";
+              break;
+            case "text":
+              operandsSplitOnAnd[i] = $"cards.text = \'{splitOnEqual.Last()}\'";
+              break;
+            case "flavortext":
+              operandsSplitOnAnd[i] = $"cards.flavortext = \'{splitOnEqual.Last()}\'";
+              break;
+            case "supertypes":
+              operandsSplitOnAnd[i] = $"cards.supertypes = \'{splitOnEqual.Last()}\'";
+              break;
+            case "types":
+              operandsSplitOnAnd[i] = $"cards.types = \'{splitOnEqual.Last()}\'";
+              break;
+            case "subtypes":
+              operandsSplitOnAnd[i] = $"cards.subtypes = \'{splitOnEqual.Last()}\'";
+              break;
+            default:
+              operandsSplitOnAnd[i] = "";
+              break;
+          }
         }
       }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MtgApi.Data.Entities;
 using MtgApi.Data.Repository;
 using MtgApi.Interfaces;
 using MtgApi.ResponseTypes;
@@ -80,12 +81,23 @@ namespace MtgApi.Services
 
     public IEnumerable<CardResponse> SearchCards(string query)
     {
-      var cardsFromDb = _dataFetcher.SearchForCards(query).ToList();
+      List<Cards> cardsFromDb = null;
 
-      //if (cardsFromDb == null)
-      //{
-      //  return new List<CardResponse>();
-      //}
+      try
+      {
+        cardsFromDb = _dataFetcher.SearchForCards(query).ToList();
+      }
+      catch (Exception e)
+      {
+        //todo add logging here for output of errors when they happen.
+        Console.WriteLine(e);
+        
+      }
+
+      if (cardsFromDb == null)
+      {
+        return new List<CardResponse>();
+      }
 
       return cardsFromDb.Select(card => new CardResponse
         {
@@ -102,7 +114,7 @@ namespace MtgApi.Services
           Toughness = card.Toughness,
           Rarity = card.Rarity,
           Loyalty = card.Loyalty,
-      })
+        })
         .ToList();
     }
   }
