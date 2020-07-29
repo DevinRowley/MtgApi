@@ -200,6 +200,8 @@ C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAn
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\sni.dll
+C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\sni.dll
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -212,6 +214,8 @@ C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\win-arm\na
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard1.3\System.Data.SqlClient.dll
+C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard1.3\System.Data.SqlClient.dll
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\MtgApi.Data.dll
 C:\src\PersonalProject\MtgApi\MtgApi\bin\Debug\netcoreapp3.1\MtgApi.Data.pdb
 C:\src\PersonalProject\MtgApi\MtgApi\obj\Debug\netcoreapp3.1\MtgApi.csprojAssemblyReference.cache

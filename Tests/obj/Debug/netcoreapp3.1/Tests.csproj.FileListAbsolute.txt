@@ -86,6 +86,7 @@ C:\src\PersonalProject\MtgApi\Tests\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.Vi
 C:\src\PersonalProject\MtgApi\Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\src\PersonalProject\MtgApi\Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\src\PersonalProject\MtgApi\Tests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\src\PersonalProject\MtgApi\Tests\obj\Debug\netcoreapp3.1\Tests.csprojAssemblyReference.cache
 C:\src\PersonalProject\MtgApi\Tests\obj\Debug\netcoreapp3.1\Tests.csproj.CoreCompileInputs.cache
 C:\src\PersonalProject\MtgApi\Tests\obj\Debug\netcoreapp3.1\Tests.AssemblyInfoInputs.cache
 C:\src\PersonalProject\MtgApi\Tests\obj\Debug\netcoreapp3.1\Tests.AssemblyInfo.cs
