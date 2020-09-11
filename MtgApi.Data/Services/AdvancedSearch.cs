@@ -36,7 +36,6 @@ namespace MtgApi.Data.Services
 
     //todo add checking to make sure the url is correct and we have error checking
     //todo add in parsing for the OR operator
-    //Todo Somehow I need to sanitize the input after the = in a search parameter e.g. colors = 1';drop%20table%20set_translations;
     //Todo add back in the ParseQueryString
     private IEnumerable<Cards> ParseQuery(string query)
     {
@@ -51,7 +50,7 @@ namespace MtgApi.Data.Services
             parsedParamsCollection.Add("cards.name", $"{andSplit.Get("name")}");
             break;
           case "manacost":
-            parsedParamsCollection.Add("cards.manacost", $"{andSplit.Get("manacost")}");
+            parsedParamsCollection.Add("cards.manaCost", $"{andSplit.Get("manacost")}");
             break;
           case "colors":
             parsedParamsCollection.Add("cards.colors", $"{andSplit.Get("colors")}");
@@ -66,13 +65,13 @@ namespace MtgApi.Data.Services
             parsedParamsCollection.Add("cards.toughness", $"{andSplit.Get("toughness")}");
             break;
           case "cmc":
-            parsedParamsCollection.Add("cards.cmc", $"{andSplit.Get("cmc")}");
+            parsedParamsCollection.Add("cards.convertedManaCost", $"{andSplit.Get("cmc")}");
             break;
           case "text":
             parsedParamsCollection.Add("cards.text", $"{andSplit.Get("text")}");
             break;
           case "flavortext":
-            parsedParamsCollection.Add("cards.flavortext", $"{andSplit.Get("flavortext")}");
+            parsedParamsCollection.Add("cards.flavorText", $"{andSplit.Get("flavortext")}");
             break;
           case "supertypes":
             parsedParamsCollection.Add("cards.supertypes", $"{andSplit.Get("supertypes")}");
@@ -105,7 +104,7 @@ namespace MtgApi.Data.Services
           return new List<Cards>();
         }
 
-        //we have an issue where if multiple colors are passed in they have the same key but the value is an string[] So we need to make a different parameter for each color
+        //we have an issue where if multiple colors are passed in they have the same key but the value is a string[] So we need to make a different parameter for each color
         //cards.color = red And Cards.color = blue
         if (parameterValues.Length > 1)
         {
